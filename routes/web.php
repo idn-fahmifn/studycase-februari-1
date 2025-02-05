@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,10 @@ Route::prefix('user')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('user.dashboard');
     })->name('dashboard.user');
+
+    // route laporan
+    Route::get('laporan-saya', [LaporanController::class, 'index']);
+
 });
 
 
