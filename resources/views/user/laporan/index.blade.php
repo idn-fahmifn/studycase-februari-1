@@ -40,17 +40,22 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
-                            <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                                <td class="py-4 px-6 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                    Kursi Patah
-                                </td>
-                                <td class="py-4 px-6 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                    14 Januari 2021
-                                </td>
-                                <td class="py-4 px-6 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                    pending
-                                </td>
-                            </tr>
+
+                            @foreach ($data as $item)
+                                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                                    <td class="py-4 px-6 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                        {{ $item->judul_laporan }}
+                                    </td>
+                                    <td class="py-4 px-6 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                        {{ $item->tanggal_laporan }}
+                                    </td>
+                                    <td class="py-4 px-6 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                        {{ $item->status }}
+                                    </td>
+                                </tr>
+                            @endforeach
+
+
                         </tbody>
                     </table>
                     <div class="mt-4">
