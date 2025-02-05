@@ -10,4 +10,9 @@ class LaporanController extends Controller
     {
         return view('user.laporan.index');
     }
+
+    public function create()
+    {
+        return view('user.laporan.create');
+    }
 }

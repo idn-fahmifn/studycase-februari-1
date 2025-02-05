@@ -20,7 +20,7 @@
                     </div>
                     <!-- kanan  button-->
                     <div class="p-6">
-                        <a href="#" class="bg-red-700 text-white px-4 py-2 rounded-md">Buat Laporan Baru</a>
+                        <a href="#" class="bg-red-700 text-white hover:bg-red-800  px-4 py-2 rounded-md">Buat Laporan Baru</a>
                     </div>
                 </div>
                 <!-- area table -->

@@ -21,15 +21,13 @@ Route::prefix('user')->middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard.user');
 
     // route laporan
-    Route::get('laporan-saya', [LaporanController::class, 'index']);
+    Route::get('laporan-saya', [LaporanController::class, 'index'])->name('laporan.index');
+    Route::get('buat-laporan', [LaporanController::class, 'create'])->name('laporan.create');
 
 });
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 require __DIR__ . '/auth.php';
