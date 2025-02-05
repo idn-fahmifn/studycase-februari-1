@@ -23,6 +23,7 @@ Route::prefix('user')->middleware(['auth', 'verified'])->group(function () {
     // route laporan
     Route::get('laporan-saya', [LaporanController::class, 'index'])->name('laporan.index');
     Route::get('buat-laporan', [LaporanController::class, 'create'])->name('laporan.create');
+    Route::post('kirim-laporan', [LaporanController::class, 'store'])->name('laporan.store');
 
 });
 Route::middleware('auth')->group(function () {

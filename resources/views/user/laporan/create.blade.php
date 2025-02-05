@@ -21,34 +21,38 @@
                 </div>
 
                 <!-- form area -->
-                <div class="mt-10 grid grid-cols-6 gap-x-6 gap-y-8 sm:grid-cols-1 p-6">
-                    <div class="sm:col-span-3 mt-2">
-                        <label class="block text-sm/6 font-medium text-gray-900 dark:text-white">Judul Laporan</label>
-                        <div class="mt-2">
-                            <input type="text" name="judul_laporan" autocomplete="given-name" class="block w-full rounded-md dark:bg-gray-800 dark:text-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+
+                <form action="{{route('laporan.store')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="mt-10 grid grid-cols-6 gap-x-6 gap-y-8 sm:grid-cols-1 p-6">
+                        <div class="sm:col-span-3 mt-2">
+                            <label class="block text-sm/6 font-medium text-gray-900 dark:text-white">Judul Laporan</label>
+                            <div class="mt-2">
+                                <input type="text" name="judul_laporan" required autocomplete="given-name" class="block w-full rounded-md dark:bg-gray-800 dark:text-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                            </div>
+                        </div>
+                        <div class="mt-2 border dark:border-gray-100 border-bg-gray-700  rounded-md flex justify-between py-6 px-6">
+                            <div>
+                                <label class="block text-sm/6 font-medium text-gray-900 dark:text-white">Dokumentasi</label>
+                            </div>
+                            <div class="mt-2">
+                                <input type="file" name="dokumentasi" required autocomplete="given-name" class="block w-full rounded-md dark:bg-gray-800 dark:text-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                            </div>
+                        </div>
+                        <div class="sm:col-span-3 mt-2">
+                            <label class="block text-sm/6 font-medium text-gray-900 dark:text-white">Deskripsi Laporan</label>
+                            <div class="mt-2">
+                                <textarea name="deskripsi" required class="block w-full rounded-md dark:bg-gray-800 dark:text-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-3 mt-2">
+                            <div class="mt-2">
+                                <button type="submit" class="bg-red-600 rounded-md text-white hover:bg-red-800 py-2 px-4">Buat Laporan</button>
+                                <a href="#" class="border border-red-600 rounded-md dark:text-white py-2 px-4">Kembali</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="mt-2 border border-gray-700 rounded-md flex justify-center py-6">
-                        <div>
-                            <label class="block text-sm/6 font-medium text-gray-900 dark:text-white">Dokumentasi</label>
-                        </div>
-                        <div class="mt-2">
-                            <input type="file" name="dokumentasi" autocomplete="given-name" class="block w-full rounded-md dark:bg-gray-800 dark:text-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                        </div>
-                    </div>
-                    <div class="sm:col-span-3 mt-2">
-                        <label class="block text-sm/6 font-medium text-gray-900 dark:text-white">Deskripsi Laporan</label>
-                        <div class="mt-2">
-                            <textarea name="deskripsi" class="block w-full rounded-md dark:bg-gray-800 dark:text-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
-                        </div>
-                    </div>
-                    <div class="sm:col-span-3 mt-2">
-                        <div class="mt-2">
-                            <button type="submit" class="bg-red-600 rounded-md text-white hover:bg-red-800 py-2 px-4">Buat Laporan</button>
-                            <button type="submit" class="border border-red-600 rounded-md text-white py-2 px-4">Kembali</button>
-                        </div>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
