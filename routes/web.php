@@ -24,8 +24,9 @@ Route::prefix('user')->middleware(['auth', 'verified'])->group(function () {
     Route::get('laporan-saya', [LaporanController::class, 'index'])->name('laporan.index');
     Route::get('buat-laporan', [LaporanController::class, 'create'])->name('laporan.create');
     Route::post('kirim-laporan', [LaporanController::class, 'store'])->name('laporan.store');
-
 });
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
