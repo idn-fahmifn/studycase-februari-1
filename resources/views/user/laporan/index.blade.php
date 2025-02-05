@@ -47,7 +47,7 @@
                                         {{ $item->judul_laporan }}
                                     </td>
                                     <td class="py-4 px-6 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                        {{ $item->tanggal_laporan }}
+                                        {{ $item->tanggal_laporan->diffForHumans() }}
                                     </td>
                                     <td class="py-4 px-6 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                         {{ $item->status }}

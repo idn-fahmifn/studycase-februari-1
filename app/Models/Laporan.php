@@ -14,6 +14,8 @@ class Laporan extends Model
         'id_user', 'judul_laporan', 'tanggal_laporan', 'status', 'deskripsi', 'dokumentasi'
     ];
 
+    protected $casts = ['tanggal_laporan' => 'datetime'];
+
     // membuat relasi ke model User
     public function user()
     {
