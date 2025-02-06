@@ -14,13 +14,13 @@
                         <div class="px-6 mt-6 text-gray-900 text-lg font-semibold dark:text-gray-100">
                             Laporan Saya
                         </div>
-                        <div class="px-6 mb-6 mt-2  text-gray-900 text-sm font-semibold dark:text-gray-100">
-                            Semua Laporan Saya
+                        <div class="px-6 mb-6 mt-2  text-gray-900 text-sm font-sm dark:text-gray-100">
+                            Semua Laporan Saya. Klik pada judul untuk melihat detail laporan.
                         </div>
                     </div>
                     <!-- kanan  button-->
                     <div class="p-6">
-                        <a href="#" class="bg-red-700 text-white hover:bg-red-800  px-4 py-2 rounded-md">Buat Laporan Baru</a>
+                        <a href="{{route('laporan.create')}}" class="bg-red-700 text-white hover:bg-red-800  px-4 py-2 rounded-md">Buat Laporan Baru</a>
                     </div>
                 </div>
                 <!-- area table -->
@@ -44,7 +44,7 @@
                             @foreach ($data as $item)
                                 <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
                                     <td class="py-4 px-6 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                        {{ $item->judul_laporan }}
+                                        <a href="{{ route('laporan.detail', $item->id) }}"> {{ $item->judul_laporan }} </a>
                                     </td>
                                     <td class="py-4 px-6 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                         {{ $item->tanggal_laporan->diffForHumans() }}

@@ -13,15 +13,22 @@
                 <!-- Navigation Links -->
 
                 @if(Auth::user()->admin)
+                <!-- nvbar admin -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
                 @else
+
+                <!-- navbar user -->
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard.user')" :active="request()->routeIs('dashboard.user')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('laporan.index')" :active="request()->routeIs('laporan.index')">
+                        {{ __('Laporan Saya') }}
                     </x-nav-link>
                 </div>
                 @endif
@@ -52,7 +59,7 @@
                             @csrf
 
                             <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
+                                onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
@@ -98,7 +105,7 @@
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                        onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
