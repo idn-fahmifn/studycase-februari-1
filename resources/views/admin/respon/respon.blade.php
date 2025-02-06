@@ -76,12 +76,22 @@
                 <h5 class="modal-title" id="exampleModalCenterTitle">Tanggapi Laporan</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="#" method="post" enctype="multipart/form-data">
+            <form action="{{route('respon.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group mt-2">
                         <label class="text-primary">Judul Respon</label>
                         <input type="text" name="judul_respon" required class="form-control">
+                        <input type="number" name="id_laporan" value="{{$data->id}}" hidden>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label class="text-primary">Status Laporan</label>
+                        <select name="status" class="form-control" required>
+                            <option value="">-pilih status-</option>
+                            <option value="diproses">diproses</option>
+                            <option value="selesai">selesai</option>
+                            <option value="ditolak">ditolak</option>
+                        </select>
                     </div>
                     <div class="form-group mt-2">
                         <label class="text-primary">Dokumentasi (jika ada)</label>

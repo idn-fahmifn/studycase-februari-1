@@ -18,7 +18,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', AdminMiddleware::class])
     // Route Laporan
     Route::get('laporan', [ResponController::class, 'index'])->name('laporan');
     Route::get('respon/{param}', [ResponController::class, 'respon'])->name('respon');
-
+    Route::post('respon', [ResponController::class, 'store'])->name('respon.store');
 
 });
 
