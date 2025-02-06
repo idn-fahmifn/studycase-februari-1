@@ -27,7 +27,7 @@
                         <tbody>
                             @foreach ($data as $item)
                             <tr>
-                                <td><a href="{{route('laporan.detail', $item->id)}}" class="text-primary">{{$item->judul_laporan}}</a></td>
+                                <td><a href="{{route('respon', $item->id)}}" class="text-primary">{{$item->judul_laporan}}</a></td>
                                 <td>{{$item->status}}</td>
                                 <td>{{$item->tanggal_laporan->diffForHumans()}}</td>
                             </tr>

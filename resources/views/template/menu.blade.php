@@ -11,7 +11,7 @@
             Fitur
         </li>
         <li>
-            <ra href="{{route('laporan.index')}}"><i data-feather="inbox"></i>Laporan</a>
+            <a href="{{route('laporan')}}"><i data-feather="inbox"></i>Laporan</a>
         </li>
     </ul>
 </div>
@@ -29,7 +29,7 @@
             Fitur
         </li>
         <li>
-            <a href="{{route('laporan.index')}}"><i data-feather="inbox"></i>Laporan</a>
+            <a href="{{route('laporan.index')}}"><i data-feather="inbox"></i>Laporan Saya</a>
         </li>
     </ul>
 </div>
