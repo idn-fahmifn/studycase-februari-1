@@ -21,22 +21,31 @@ class ResponController extends Controller
     }
     public function store(Request $request)
     {
-        $input = $request->all();
+        $input = $request;
         if ($request->hasFile('dokumentasi')) {
             // file yang diupload
             $file = $request->file('dokumentasi');
             $path = 'public/images/respon';
             $name = 'respon_' . Carbon::now()->format('ymdhms') . '.' . $file->getClientOriginalExtension();
             $file->storeAs($path, $name);
-
             // yang dikirim ke database
-            $input['dokumentasi'] = $name;
+            $dokumentasi = $name;
         }
 
-        $input['tanggal_respon'] = Carbon::now()->format('Y-m-d H:i:s');
-        $input['id_laporan'] = $request->id_laporan;
+        $tanggal_respon = Carbon::now()->format('Y-m-d H:i:s');
+        $id_laporan = $request->id_laporan;        
+        Respon::create([
+            'judul_respon' => $input->judul_respon,
+            'tanggal_respon' => $tanggal_respon,
+            'id_laporan' => $id_laporan,
+            'deskripsi' => $input->deskripsi,
+            'dokumentasi' => $dokumentasi,
+        ]);
 
-        Respon::create($input);
+        $status = Laporan::find($id_laporan);
+        $status->status = $request->status;
+        $status->save();
+
         return back()->with('success', 'Respon berhasil dikirim');
     }
 }
