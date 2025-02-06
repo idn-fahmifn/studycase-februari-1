@@ -21,14 +21,14 @@
                     <!-- sebelah kanan -->
                     <div class="px-6 py-6">
                         @if ($data->status == 'pending')
-                        <span class="bg-green-400 text-white rounded-md py-2 px-4 flex gap-4">
+                        <span class="bg-gray-400 text-white rounded-md py-2 px-4 flex gap-4">
                             <i data-feather="clock"></i>
-                            pending
+                            Pending
                         </span>
                         @elseif($data->status == 'diproses')
                         <span class="bg-green-700 text-white rounded-md py-2 px-4 flex gap-4">
                             <i data-feather="clock"></i>
-                            sedang diproses
+                            Diproses
                         </span>
                         @elseif($data->status == 'selesai')
                         <span class="bg-green-800 text-white rounded-md py-2 px-4 flex gap-4">
@@ -43,6 +43,14 @@
                         @endif
                     </div>
                 </div>
+                <!-- <div class="flex justify-between"> -->
+                <div class="px-6 mb-3 mt-4  text-gray-900 text-sm font-semibold dark:text-gray-100">
+                    {{ $data->deskripsi }}
+                </div>
+                <div class="px-6 mb-3">
+                    <img src="{{asset('storage/images/laporan/'.$data->dokumentasi)}}" class="h-25" alt="Bukti Laporan">
+                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
