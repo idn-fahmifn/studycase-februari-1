@@ -19,6 +19,10 @@
   <link href="{{asset('assets/plugins/font-awesome/css/all.min.css')}}" rel="stylesheet">
   <link href="{{asset('assets/plugins/perfectscroll/perfect-scrollbar.css')}}" rel="stylesheet">
 
+  <!-- datatables -->
+  <link href="{{ asset('assets/plugins/DataTables/datatables.min.css') }}" rel="stylesheet">   
+
+
 
   <!-- Theme Styles -->
   <link href="{{asset('assets/css/main.min.css')}}" rel="stylesheet">
@@ -44,12 +48,11 @@
             <li class="nav-link">
               <div class="logo">
                 <a class="" href="index.html">
-                  <img src="https://www.idn.id/storage/2023/01/LOGO-ID-Networkers-IDN.ID-Merah-1024x320.png" width="200" alt="Logo">
+                  <img src="https://www.idn.id/storage/2023/01/LOGO-ID-Networkers-IDN.ID-Merah-1024x320.png" width="110" alt="Logo">
                 </a>
               </div>
             </li>
           </ul>
-
         </div>
 
         <div class="" id="headerNav">
@@ -160,10 +163,11 @@
     <!-- end area navbar -->
     <div class="page-content">
       <div class="main-wrapper">
+
+      @yield('content')
+
       </div>
-
     </div>
-
   </div>
 
   <!-- Javascripts -->
@@ -173,6 +177,12 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="{{asset('assets/plugins/perfectscroll/perfect-scrollbar.min.js')}}"></script>
   <script src="{{asset('assets/js/main.min.js')}}"></script>
+
+  <!-- datatables -->
+  <script src="{{asset('assets/plugins/DataTables/datatables.min.js')}}"></script>
+  <script src="{{asset('assets/js/pages/datatables.js')}}"></script>
+
+
 </body>
 
 </html>
