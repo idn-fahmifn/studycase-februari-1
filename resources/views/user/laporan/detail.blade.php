@@ -1,57 +1,39 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Detail Laporan
-        </h2>
-    </x-slot>
+@extends('template.template')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="flex justify-between align-items-center">
-                    <!-- kiri  judul-->
-                    <div>
-                        <div class="px-6 mt-6 text-gray-900 text-lg font-semibold dark:text-gray-100">
-                            {{ $data->judul_laporan }}
-                        </div>
-                        <div class="px-6 mb-6 mt-2  text-gray-900 text-sm font-semibold dark:text-gray-100">
-                            Detail laporan {{ $data->judul_laporan }} dan progress tinjauannya.
+@section('content')
+<div class="row">
+    <div class="col">
+        <div class="card p-2">
+            <div class="card-body">
+                <h5 class="card-title">{{ $data->judul_laporan }}</h5>
+                <p>Status laporan saat ini <span class="text-primary">{{$data->status}}</span></p>
+                <!-- area detail -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th>Judul Laporan</th>
+                                    <td>{{$data->judul_laporan}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Nama Pelapor</th>
+                                    <td>{{$data->user->name}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Dibuat Pada</th>
+                                    <td>{{$data->tanggal_laporan->diffForHumans()}}</td>
+                                </tr>
+                            </table>
+                            {{ $data->deskripsi }}
                         </div>
                     </div>
-                    <!-- sebelah kanan -->
-                    <div class="px-6 py-6">
-                        @if ($data->status == 'pending')
-                        <span class="bg-gray-400 text-white rounded-md py-2 px-4 flex gap-4">
-                            <i data-feather="clock"></i>
-                            Pending
-                        </span>
-                        @elseif($data->status == 'diproses')
-                        <span class="bg-green-700 text-white rounded-md py-2 px-4 flex gap-4">
-                            <i data-feather="clock"></i>
-                            Diproses
-                        </span>
-                        @elseif($data->status == 'selesai')
-                        <span class="bg-green-800 text-white rounded-md py-2 px-4 flex gap-4">
-                            <i data-feather="clock"></i>
-                            Selesai
-                        </span>
-                        @else
-                        <span class="bg-red-800 text-white rounded-md py-2 px-4 flex gap-4">
-                            <i data-feather="clock"></i>
-                            Ditolak
-                        </span>
-                        @endif
+                    <div class="col-md-6 text-center">
+                        <img src="{{asset('storage/images/laporan/'.$data->dokumentasi)}}" class="p-6 img-thumbnail" width="300" alt="Gambar">
                     </div>
                 </div>
-                <!-- <div class="flex justify-between"> -->
-                <div class="px-6 mb-3 mt-4  text-gray-900 text-sm font-semibold dark:text-gray-100">
-                    {{ $data->deskripsi }}
-                </div>
-                <div class="px-6 mb-3">
-                    <img src="{{asset('storage/images/laporan/'.$data->dokumentasi)}}" class="h-25" alt="Bukti Laporan">
-                </div>
-                <!-- </div> -->
             </div>
         </div>
     </div>
-</x-app-layout>
+</div>
+@endsection

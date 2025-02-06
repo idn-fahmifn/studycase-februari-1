@@ -6,11 +6,11 @@
         <div class="card p-2">
             <div class="card-body">
                 <h5 class="card-title">Laporan Saya</h5>
-                <span>Semua laporan saya dan progres peninjauan laporan.</span>
+                <span>Semua laporan saya, Klik pada judul laporan untuk melihat detai laporan.</span>
 
                 <!-- area table -->
 
-                <div class="table-responsive">
+                <div class="table-responsive mt-4">
                     <table id="zero-conf" class="table table-striped display">
                         <thead>
                             <th>Judul Laporan</th>
