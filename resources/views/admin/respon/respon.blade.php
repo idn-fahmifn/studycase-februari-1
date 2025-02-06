@@ -51,20 +51,21 @@
         </div>
     </div>
 
-
+    @foreach ($respon as $item)
     <div class="col-md-12">
         <div class="card">
             <div class="card-body p-4">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="text-bold">Judul</h5>
-                    <span class="text-sm">3 jam yang lalu</span>
+                    <h5 class="text-bold">{{$item->judul_respon}}</h5>
+                    <span class="text-sm">{{$item->tanggal_respon->diffForHumans()}}</span>
                 </div>
                 <div class="mt-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolore culpa, autem, quas ipsam esse accusantium molestias unde accusamus, eaque dolor ea excepturi et fugiat non voluptate architecto iure distinctio molestiae! Eveniet eaque minus quaerat exercitationem minima quisquam labore quasi mollitia est delectus, error laudantium cumque nihil, dolore doloremque veniam.
+                    {{ $item->deskripsi }}
                 </div>
             </div>
         </div>
     </div>
+    @endforeach
 
 </div>
 
