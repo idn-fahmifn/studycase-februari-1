@@ -20,7 +20,7 @@
   <link href="{{asset('assets/plugins/perfectscroll/perfect-scrollbar.css')}}" rel="stylesheet">
 
   <!-- datatables -->
-  <link href="{{ asset('assets/plugins/DataTables/datatables.min.css') }}" rel="stylesheet">   
+  <link href="{{ asset('assets/plugins/DataTables/datatables.min.css') }}" rel="stylesheet">
 
 
 
@@ -151,7 +151,13 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#"><i data-feather="settings"></i>Settings</a>
                 <a class="dropdown-item" href="#"><i data-feather="unlock"></i>Lock</a>
-                <a class="dropdown-item" href="#"><i data-feather="log-out"></i>Logout</a>
+                <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>Logout</a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                </form>
+
               </div>
             </li>
           </ul>
@@ -164,7 +170,7 @@
     <div class="page-content">
       <div class="main-wrapper">
 
-      @yield('content')
+        @yield('content')
 
       </div>
     </div>

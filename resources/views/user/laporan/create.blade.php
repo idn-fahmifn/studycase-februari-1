@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 mt-2 d-flex justify-content-end gap-3">
-                            <a href="#" class="btn btn-outline-danger">Kembali</a>
+                            <a href="{{route('laporan.index')}}" class="btn btn-outline-danger">Kembali</a>
                             <button type="submit" class="btn btn-primary">Buat Laporan</button>
                         </div>
                     </div>

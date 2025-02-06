@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ResponController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,10 @@ Route::prefix('admin')->middleware(['auth', 'verified', AdminMiddleware::class])
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+
+    // Route Laporan
+    Route::get('laporan', [ResponController::class, 'index'])->name('laporan');
+
 });
 
 Route::prefix('user')->middleware(['auth', 'verified'])->group(function () {
