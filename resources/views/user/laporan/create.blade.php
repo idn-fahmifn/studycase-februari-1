@@ -30,8 +30,8 @@
                                 <textarea name="deskripsi" class="form-control mt-2 p-2"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-12 d-flex justify-content-end">
-                            <a href="#" class="btn-btn-outline-primary">Kembali</a>
+                        <div class="col-md-12 mt-2 d-flex justify-content-end gap-3">
+                            <a href="#" class="btn btn-outline-danger">Kembali</a>
                             <button type="submit" class="btn btn-primary">Buat Laporan</button>
                         </div>
                     </div>
